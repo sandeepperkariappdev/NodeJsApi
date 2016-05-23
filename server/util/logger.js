@@ -1,4 +1,4 @@
-require("colors");
+
 var _ = require("lodash");
 
 var config = require("../config/config");
@@ -14,8 +14,8 @@ var logger = {
               var string = JSON.stringify(arg,2);
               return string.magenta;              
           } else {
-              arg +="";
-              return arg.magenta;
+              args +="";
+              return args.magenta;
           }
       });
       

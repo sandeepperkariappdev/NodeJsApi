@@ -1,7 +1,8 @@
 
 
 function getStudents(){
-    sendRequest("GET","http://localhost:3400/students", undefined,"");    
+   // sendRequest("GET","http://localhost:3400/students", undefined,"");    
+     sendRequest("GET","http://localhost:3400/api/users", undefined,"");    
 };
 var i=0;
 function postStudents(){
@@ -21,7 +22,11 @@ function postUsers(){
     stuObj.class = "1st";
     stuObj.school = "ABCD";
     stuObj.id = 1100+i;
-    sendRequest("POST","http://localhost:3400/users", stuObj,"");
+    
+    var x = {};
+    x.username = "sandeep"
+    //sendRequest("POST","http://localhost:3400/users", stuObj,"");
+    sendRequest("POST","http://localhost:3400/api/users", x,"");
 };
 
 
@@ -46,5 +51,6 @@ function sendRequest(method,url,reqObj,cb){
         }
         else{
             xmlHttp.send(JSON.stringify(reqObj));
+             //xmlHttp.send(username="sandeep");
         }
 };
